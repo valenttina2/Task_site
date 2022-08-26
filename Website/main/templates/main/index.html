@@ -6,6 +6,7 @@
 
 {%block content%}
     <h1>Все задачи</h1>
+    {% if tasks %}
     {% for task in tasks %}
     <div class="alert alert-warning mt-2">
         <h3>{{task.title}}</h3>
@@ -13,5 +14,8 @@
         <p>Срок окончания: {{task.date}}</p>
     </div>
     {%endfor%}
+    {%else%}
+    <p>У вас нет сохраненных задач</p>
+    {%endif%}
 {%endblock%}
 
