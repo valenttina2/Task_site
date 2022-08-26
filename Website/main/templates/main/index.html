@@ -1,11 +1,17 @@
 {%extends "main/base.html"%}
 
 {%block title%}
-Главная страница
+{{title}}
 {%endblock%}
 
 {%block content%}
-    <h1>Главная страница</h1>
-    <p>Какой-то текст</p>
+    <h1>Все задачи</h1>
+    {% for task in tasks %}
+    <div class="alert alert-warning mt-2">
+        <h3>{{task.title}}</h3>
+        <p>{{task.task}}</p>
+        <p>Срок окончания: {{task.date}}</p>
+    </div>
+    {%endfor%}
 {%endblock%}
 
