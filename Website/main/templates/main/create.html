@@ -7,6 +7,7 @@
 {%block content%}
 <H1>Создайте новую задачу</H1>
 <form method="post">
+    {% csrf_token %}
     <input type="text" placeholder="Введите название задачи" class="form-control">
     <br>
     <textarea type="text" placeholder="Введите описание" class="form-control"></textarea>
